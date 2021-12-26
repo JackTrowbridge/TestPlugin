@@ -4,6 +4,7 @@ package dev.jayjaytee.testplugin.commands;
 import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.CommandPermission;
 import dev.jorel.commandapi.arguments.GreedyStringArgument;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 
@@ -17,7 +18,7 @@ public class BroadcastCommand {
                 .withPermission(CommandPermission.OP)               // Required permissions
                 .executes((sender, args) -> {
                     String message = (String) args[0];
-                    Bukkit.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&c&l&nALERT&r " + message));
+                    Bukkit.getServer().broadcast(Component.text(ChatColor.translateAlternateColorCodes('&', "&c&l&nALERT&r " + message)));
                 }).register();
 
     }
