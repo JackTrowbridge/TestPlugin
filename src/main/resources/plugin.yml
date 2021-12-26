@@ -1,0 +1,8 @@
+name: TestPlugin
+version: '${project.version}'
+main: dev.jayjaytee.testplugin.TestPlugin
+api-version: 1.18
+authors: [ JAYJAYTEE ]
+depend:
+  - CommandAPI
+  - TitleAPI
