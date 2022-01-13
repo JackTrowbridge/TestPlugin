@@ -13,7 +13,7 @@ public class GamemodeCommand {
 
         new CommandAPICommand("gamemode")
                 .withAliases("gm")
-                .withPermission(CommandPermission.fromString("gamemode"))
+                .withPermission("gamemode")
                 .withArguments(new MultiLiteralArgument("creative", "survival", "adventure", "spectator"))
                 .executes((sender, args) -> {
                     Player player = (Player) sender;

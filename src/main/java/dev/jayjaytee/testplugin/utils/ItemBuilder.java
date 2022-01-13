@@ -1,5 +1,7 @@
 package dev.jayjaytee.testplugin.utils;
 
+import de.tr7zw.nbtapi.NBTItem;
+import net.kyori.adventure.text.Component;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
@@ -102,6 +104,25 @@ public class ItemBuilder {
      */
     public ItemBuilder setItem(Material material){
         this.itemStack.setType(material);
+        return this;
+    }
+
+    /**
+     * Set the damage lore
+     * @param amount
+     */
+    public ItemBuilder setDamage(int amount){
+
+        // Lore
+        ArrayList<Component> lore = new ArrayList<>();
+        lore.add(Component.text("§cDamage: §f"+amount));
+        this.itemStack.lore(lore);
+
+        // Nbt
+        NBTItem nbtItem = new NBTItem(this.itemStack);
+        nbtItem.setInteger("damage", amount);
+        this.itemStack = nbtItem.getItem();
+
         return this;
     }
 

@@ -6,3 +6,4 @@ authors: [ JAYJAYTEE ]
 depend:
   - CommandAPI
   - TitleAPI
+  - Citizens

@@ -12,7 +12,10 @@ public class ItemTestCommand {
         new CommandAPICommand("itemtest")
                 .executes((sender, args) -> {
                     Player player = (Player) sender;
-                    player.getInventory().addItem(new ItemBuilder(Material.DIAMOND_AXE).setName("&bTest Axe").toItemStack());
+                    player.getInventory().addItem(new ItemBuilder(Material.DIAMOND_AXE)
+                            .setName("&bTest Axe")
+                            .setDamage(10)
+                            .toItemStack());
                 }).register();
 
     }
